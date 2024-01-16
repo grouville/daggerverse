@@ -1,4 +1,7 @@
 {
   "name": "rcodesign",
-  "sdk": "go"
+  "sdk": "go",
+  "dependencies": [
+    "github.com/grouville/daggerverse/cargo@ad0e823d0e4885221b52c4e09c83aad743fce454"
+  ]
 }
