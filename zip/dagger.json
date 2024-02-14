@@ -1,0 +1,5 @@
+{
+  "name": "zip",
+  "sdk": "go",
+  "engineVersion": "v0.9.10"
+}
