@@ -6749,13 +6749,13 @@ func invoke(ctx context.Context, parentJSON []byte, parentName string, fnName st
 	switch parentName {
 	case "Localstack":
 		switch fnName {
-		case "LocalStack":
+		case "Serve":
 			var parent Localstack
 			err = json.Unmarshal(parentJSON, &parent)
 			if err != nil {
 				panic(fmt.Errorf("%s: %w", "failed to unmarshal parent object", err))
 			}
-			return (*Localstack).LocalStack(&parent), nil
+			return (*Localstack).Serve(&parent), nil
 		default:
 			return nil, fmt.Errorf("unknown function %s", fnName)
 		}
@@ -6764,9 +6764,9 @@ func invoke(ctx context.Context, parentJSON []byte, parentName string, fnName st
 			WithObject(
 				dag.TypeDef().WithObject("Localstack").
 					WithFunction(
-						dag.Function("LocalStack",
+						dag.Function("Serve",
 							dag.TypeDef().WithObject("Service")).
-							WithDescription("LocalStack returns a new Localstack service\nexposed on port 4566"))), nil
+							WithDescription("LocalStack returns a new Localstack service\nexposed on port 4566\nusage:  dagger call Serve up --ports 4566:4566"))), nil
 	default:
 		return nil, fmt.Errorf("unknown object %s", parentName)
 	}
