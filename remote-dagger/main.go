@@ -7,7 +7,6 @@ import (
 )
 
 type RemoteDagger struct {
-	// +private
 	SSHClient *SSHClient
 }
 
