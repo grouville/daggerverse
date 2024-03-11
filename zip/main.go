@@ -4,7 +4,9 @@ type Zip struct{}
 
 // zips the given directory and returns the path to the zip file
 // usage: dagger call compress --file <path> export --path <path.zip>
-func (m *Zip) Compress(file *File) *File {
+func (m *Zip) Compress(
+	file *File, // the file to compress
+) *File {
 	filePath := "/tmp/file"
 
 	return dag.Container().
