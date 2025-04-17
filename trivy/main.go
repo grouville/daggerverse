@@ -14,6 +14,13 @@ import (
 // Uses official Trivy image
 type Trivy struct{}
 
+// Wrapper for Trivy CLI
+// Scans container images for vulnerabilities
+// Uses official Trivy image
+func New() *Trivy {
+	return &Trivy{}
+}
+
 // Return a Container from the official trivy image.
 func (t *Trivy) Base(
 	// +optional
