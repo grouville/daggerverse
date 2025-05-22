@@ -1,0 +1,7 @@
+{
+  "name": "claudette-workspace",
+  "engineVersion": "v0.18.8",
+  "sdk": {
+    "source": "go"
+  }
+}
